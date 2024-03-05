@@ -1,0 +1,175 @@
+/* reset.css */
+
+/* Box-sizing border-box por defecto para todos los elementos */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset de márgenes y rellenos */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+figure,
+dl,
+dd,
+ul,
+ol,
+li,
+fieldset,
+legend,
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  padding: 0;
+}
+
+/* Normalización de estilos */
+body {
+  line-height: 1.5;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+/* Eliminar estilos por defecto de la lista */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Asegurar que los elementos de bloque no tengan un margen inferior adicional */
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* Asegurar que los elementos de tabla tengan el espacio correcto y las celdas no tengan espacio adicional */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Reset de estilos para algunos elementos de formulario */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* Reset de estilos para elementos de formulario WebKit/Blink */
+button,
+input {
+  overflow: visible;
+}
+
+/* Corregir estilo de desbordamiento en IE */
+button,
+select {
+  text-transform: none;
+}
+
+/* Asegurar que los elementos de formulario tengan los mismos márgenes en todos los navegadores */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+/* Estilo por defecto para campos de entrada tipo radio y checkbox en IE */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Estilo por defecto para elementos de rango en WebKit/Blink */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* Ajustes de estilo para navegadores más antiguos */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+}
+
+/* Establecer tamaño de fuente a 100% en todos los navegadores */
+small {
+  font-size: 100%;
+}
+
+/* Evitar el ajuste de estilo para imágenes en IE 8/9/10 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Reiniciar estilos para elementos incrustados en IE */
+embed,
+object,
+iframe {
+  max-width: 100%;
+}
+
+/* Asegurar que los elementos flexibles se comporten de manera esperada en IE 10/11 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* Eliminar el estilo de enlace subrayado predeterminado en navegadores */
+a {
+  text-decoration: none;
+}
+
+/* Asegurar la visibilidad de los elementos ocultos de manera consistente en navegadores */
+[hidden] {
+  display: none;
+}
+
+/* Establecer colores de fondo y bordes de formulario para IE 8/9 */
+input,
+select,
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilo adicional a tu gusto puede ser añadido después de este reset básico */

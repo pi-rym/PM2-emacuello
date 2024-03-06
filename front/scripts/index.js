@@ -1,46 +1,47 @@
-import { tempData } from "./tempData.js";
+$.get('https://students-api.2.us-1.fl0.io/movies', (data) => {
+    data.forEach(crearCards)
+})
 
-// const [guardians, startWars, ring] = tempData
-console.log(tempData)
 function crearCards(data) {
-    const [guardians, starWars, ring] = data;
-    
-    function destructurar(pelicula){
-        const {title,year,director,duration,genre,rate,poster} = pelicula;
-        const generos = genre.join(", ");
+    const titulo = document.createElement("h3");
+    const descripcion = document.createElement("p");
+    const imagen = document.createElement("img");
+    const div = document.createElement("div");
+    const divFront = document.createElement("div");
+    const divBack = document.createElement("div");
+    const divLink = document.createElement("div");
+    const link = document.createElement("a");
 
-        const titulo =  document.createElement("h2");
-        const descripcion = document.createElement("p");
-        const imagen = document.createElement("img");
-        const div = document.createElement("div");
+    titulo.innerHTML = data.title;
+    descripcion.innerHTML = `${data.title}" es una película dirigida por ${data.director}, lanzada en el año ${data.year}. Tiene una duración de ${data.duration} y recibió una puntuación de ${data.rate} puntos según la crítica especializada. Los géneros de la película incluyen: ${data.genre.join(", ")}`
+    imagen.src = data.poster;
 
-        titulo.innerHTML = title;
-        descripcion.innerHTML = `${title}" es una película dirigida por ${director}, lanzada en ${year}. Tiene una duración de ${duration} y recibió una puntuación de ${rate} puntos según la crítica especializada. Los géneros de la película incluyen: ${generos}`
-        imagen.src = poster;
+    div.classList.add('card');
+    divFront.classList.add('face', 'front');
+    divBack.classList.add('face', 'back');
+    divLink.classList.add('link');
 
-        titulo.classList.add('text-center');
-        descripcion.classList.add('text-center');
-        div.classList.add('image-card');
+    divFront.appendChild(imagen);
+    divFront.appendChild(titulo);
 
-        
-        div.onmouseover = () => changeBackground(poster);
-        div.onmouseout = () => restoreBackground();
+    const backTitulo = document.createElement("h3");
+    backTitulo.innerHTML = data.title;
+    divBack.appendChild(backTitulo);
+    divBack.appendChild(descripcion);
 
-        div.appendChild(imagen);
-        div.appendChild(titulo)
-        div.appendChild(descripcion);
-        
-        return div;
-    }
+    link.href = '#'
+    link.innerHTML = 'Detalles';
+    divLink.appendChild(link);
+    divBack.appendChild(divLink)
+
+    div.appendChild(divFront);
+    div.appendChild(divBack);
+
     const contenedor = document.getElementById('container');
-    contenedor.innerHTML = '';
-
-    contenedor.appendChild(destructurar(guardians));
-    contenedor.appendChild(destructurar(starWars));
-    contenedor.appendChild(destructurar(ring));
+    contenedor.appendChild(div);
 }
 
-crearCards(tempData)
+
 
 
 

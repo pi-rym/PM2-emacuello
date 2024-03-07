@@ -16,10 +16,10 @@ function crearCards(data) {
     descripcion.innerHTML = `${data.title}" es una película dirigida por ${data.director}, lanzada en el año ${data.year}. Tiene una duración de ${data.duration} y recibió una puntuación de ${data.rate} puntos según la crítica especializada. Los géneros de la película incluyen: ${data.genre.join(", ")}`
     imagen.src = data.poster;
 
-    div.classList.add('card');
+    div.classList.add('my-card');
     divFront.classList.add('face', 'front');
     divBack.classList.add('face', 'back');
-    divLink.classList.add('link');
+    divLink.classList.add('my-link');
 
     divFront.appendChild(imagen);
     divFront.appendChild(titulo);

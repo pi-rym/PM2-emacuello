@@ -8,11 +8,11 @@ const datos = async(url) => {
         const cards = data.data;
         cards.forEach(crearCards); 
     } catch (error) {
-        error.message = 'Error de API'
+        alert(error.message)
     }
 }
 
-datos('https://students-api.2.us-1.fl0.io/movies');
+datos('https://students-api.up.railway.app/movies');
 
 
 

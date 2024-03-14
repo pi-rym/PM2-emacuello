@@ -12,7 +12,7 @@ const datos = async(url) => {
     }
 }
 
-datos('https://students-api.up.railway.app/movies');
+datos('http://localhost:3000/movies');
 
 
 

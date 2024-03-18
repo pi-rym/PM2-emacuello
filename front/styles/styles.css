@@ -1,7 +1,8 @@
 body {
     background-color: #000 !important;
     transition: background-image 2s ease-in-out;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .logo {
@@ -14,7 +15,6 @@ body {
     width: 80px;
     height: auto;
     border-radius: 200px;
-
 }
 
 .my-text-center {
@@ -28,7 +28,7 @@ h1 a {
 }
 
 .top {
-    margin-top: 30px
+    margin-top: 30px;
 }
 
 .bot {
@@ -48,27 +48,23 @@ h1 a {
 }
 
 .letras {
-    text-shadow: -1px 0 black, 0 1px black,
-        1px 0 black, 0 -1px black;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .texto {
     color: white;
     font-size: 200%;
-    text-shadow: -1px 0 black, 0 1px black,
-        1px 0 black, 0 -1px black;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.container-fluid:hover a img{
+.container-fluid:hover a img {
     animation: wave-animation 0.3s infinite;
 }
-
 
 .lista {
     color: #f3f3f3;
     font-size: 150%;
-    text-shadow: -1px 0 black, 0 1px black,
-        1px 0 black, 0 -1px black;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .container-nav {
@@ -174,7 +170,7 @@ h1 a {
     backface-visibility: hidden;
     border-radius: 10px;
     overflow: hidden;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .my-card .front {
@@ -196,7 +192,7 @@ h1 a {
     height: 45px;
     line-height: 45px;
     color: #fff;
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, 0.7);
     text-align: center;
 }
 
@@ -273,7 +269,6 @@ h1 a {
 .ul li:hover~li img {
     animation: wave-animation 0.3s infinite;
 }
-
 
 .footer {
     display: flex;

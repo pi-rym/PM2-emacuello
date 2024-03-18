@@ -2,8 +2,6 @@ const crearCards = require('./renderCards.js')
 const axios = require('axios')
 const {verifyInput, clear} = require('./form.js')
 
-verifyInput()
-clear()
 
 const datos = async(url) => {
     try {
@@ -14,10 +12,12 @@ const datos = async(url) => {
         alert(error.message)
     }
 }
-
-
-
 datos('http://localhost:3000/movies');
+
+verifyInput()
+clear()
+
+
 
 
 

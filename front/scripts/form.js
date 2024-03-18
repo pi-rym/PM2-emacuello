@@ -16,8 +16,6 @@ const checkEmptyFields = (fields) => {
     return false;
 };
 
-
-
 const verifyInput = () => {
     btnSubmit.addEventListener("click", (event) => {
         event.preventDefault();
@@ -28,6 +26,8 @@ const verifyInput = () => {
         }
     });
 };
+
+
 const clear = () => {
     btnClear.addEventListener("click", () => {
         id.forEach(x => document.getElementById(x).value='')

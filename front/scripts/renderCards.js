@@ -9,7 +9,7 @@ function crearCards(data) {
     const link = document.createElement("a");
 
     titulo.innerHTML = data.title;
-    descripcion.innerHTML = `${data.title}" es una película dirigida por ${data.director}, lanzada en el año ${data.year}. Tiene una duración de ${data.duration} y recibió una puntuación de ${data.rate} puntos según la crítica especializada. Los géneros de la película incluyen: ${data.genre.join(", ")}`
+    descripcion.innerHTML = `${data.title} es una película dirigida por ${data.director}, lanzada en el año ${data.year}. Tiene una duración de ${data.duration} y recibió una puntuación de ${data.rate} puntos según la crítica especializada. Los géneros de la película incluyen: ${data.genre.join(", ")}`
     imagen.src = data.poster;
 
     div.classList.add('my-card');

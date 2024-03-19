@@ -2,16 +2,32 @@ const Movie = require('../models/Movie')
 
 
 const getMovies = async () => {
-    const movies = await Movie.find().populate();
-    return movies;
+    try {
+        const movies = await Movie.find();
+        return movies;
+        
+    } catch (error) {
+        throw new Error('Error al obtener las peliculas')
+    }
 }
+
 const sendMovie = async (id) => {
-    const movies = await Movie.findById(id);
-    return movies;
+    try {
+        const movies = await Movie.findById(id);
+        return movies;
+        
+    } catch (error) {
+        throw new Error('Error al obtener el ID')     
+    }
 }
+
 const createMovie = async (movie) => {
-    const newMovie = await Movie.create(movie);
-    return newMovie;
+    try {
+        const newMovie = await Movie.create(movie);
+        return newMovie;
+    } catch (error) {
+        throw new Error('Error al agregar la pelicula')
+    }
 }
 
 module.exports = {getMovies, createMovie, sendMovie}

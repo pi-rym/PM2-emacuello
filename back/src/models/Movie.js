@@ -1,6 +1,7 @@
 const {Schema, model} = require('mongoose');
 
 const movieSchema = new Schema({
+    _id: Number,
     title: {
         type: String,
         required: true,
@@ -11,6 +12,10 @@ const movieSchema = new Schema({
         max: 2050,
     },
     director: {
+        type: String,
+        required: true,
+    },
+    duration: {
         type: String,
         required: true,
     },

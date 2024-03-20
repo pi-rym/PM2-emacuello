@@ -85,6 +85,10 @@
         <a href="/front/index.html">Proyecto M2</a>
       </h1>
       <h3>¡Ayudanos a mejorar nuestra base de datos añadiendo las peliculas que desees!</h3>
+      <div>
+        <div id="alertGreen" class="alert alert-success alert-dismissible fade show" role="alert" style="display: none">Datos enviados correctamente!</div>
+        <div id="alertRed" class="alert alert-danger fade show" role="alert" style="display: none">Por favor, complete los campos requeridos!</div>
+      </div>
       <form id="form" class="needs-validation" novalidate>
         <div class="row g-2 m-3">
           <div class="col-md">
@@ -237,7 +241,6 @@
           <div class="row gx-5">
             <div class="col">
               <button type="button" class="btn btn-outline-primary btn-lg" id="clear">Limpiar</button>
-
             </div>
             <div class="col">
               <button type="submit" class="btn btn-primary btn-lg" id="submit">Enviar</button>

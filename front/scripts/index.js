@@ -1,6 +1,6 @@
 const crearCards = require('./renderCards.js')
 const axios = require('axios')
-const {clear} = require('./form.js')
+const {clear, showAlertRed, showAlertGreen} = require('./form.js')
 const btnSubmit = document.getElementById('submit')
 const form = document.getElementById("form");
 
@@ -16,22 +16,35 @@ const datos = async(url) => {
 datos('http://localhost:3000/movies');
 
 
+
 const handler = (title, director, year, duration, rate, genre, poster) => {
-    if (director === '' || year === '' || duration=== '' || rate === '' ||genre=== '' ||poster=== '' ||title=== '' || rate > 10 || year < 0 || year > 2050) {
+    title = String(title);
+    director = String(director);
+    year = String(year);
+    duration = String(duration);
+    rate = String(rate);
+    genre = String(genre);
+    poster = String(poster);
+    const isValid = (str) => str.trim() !== '';
+    const isRateValid = !isNaN(rate) && rate >= 0 && rate <= 10;
+    const isYearValid = !isNaN(year) && year >= 0 && year <= 2050;
+    
+    if (!isValid(title) || !isValid(director) || !isValid(genre) || !isValid(poster) || !isValid(duration) || !isRateValid || !isYearValid) {
         form.classList.add('was-validated');
-        return alert('comprobar todos los campos requeridos')
+        return showAlertRed();
     } else {
-        return      {
+        return {
             _id: null,
-            title: title,
-            director: director,
-            year: year,
-            duration: duration,
-            rate: rate,
-            genre: genre,
-            poster:poster,
-            }   
-}}
+            title,
+            director,
+            year,
+            duration,
+            rate,
+            genre,
+            poster
+        };
+    }
+}
 
 async function postMovies (movie) {
     const url = 'http://localhost:3000/movies';
@@ -39,6 +52,7 @@ async function postMovies (movie) {
         const response = await axios.post(url, movie);
         console.log(response.data)
         console.log('Película agregada con éxito');
+        showAlertGreen();
     } catch (error) {
         console.log('Error al enviar datos al servidor: 2', error);
     }
@@ -55,7 +69,6 @@ btnSubmit.addEventListener('click', async (event) => {
     const poster = document.getElementById('poster').value;
     const title = document.getElementById('title').value;
     const movie= handler(title, director, year, duration, rate, genre, poster)
-    console.log(movie)
     if (movie) {
         try {
             await postMovies(movie);           

@@ -30,9 +30,6 @@ const verifyInput = () => {
 };
 
 
-
-
-
 const clear = () => {
     btnClear.addEventListener("click", () => {
         id.forEach(x => document.getElementById(x).value='')

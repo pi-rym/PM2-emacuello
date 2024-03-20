@@ -16,6 +16,9 @@ const datos = async(url) => {
 }
 datos('http://localhost:3000/movies');
 
+verifyInput()
+
+
 btnSubmit.addEventListener('click', async (event) => {
     event.preventDefault()
     const director = document.getElementById('director').value;
@@ -29,12 +32,12 @@ btnSubmit.addEventListener('click', async (event) => {
     console.log(movie)
     if (movie) {
         try {
-        await postMovies(movie);
+            await postMovies(movie);
             
         } catch (error) {
             console.error('Error al enviar datos al servidor:', error);
         }
-            
+        
         
     }
 })
@@ -51,11 +54,7 @@ const postMovies = async (movie) => {
     const url = 'http://localhost:3000/movies';
     try {
         const response = await axios.post(url, movie);
-        if (response.status === 400 && response.data.error === "Invalid status code: La pelicula fue agregada con exito") {
-            console.log('Película agregada con éxito');
-        } else {
-            console.error('Error al enviar datos al servidor:', response.data.error);
-        }
+        console.log('Película agregada con éxito');
     } catch (error) {
         console.error('Error al enviar datos al servidor:', error);
     }
@@ -63,7 +62,6 @@ const postMovies = async (movie) => {
 
 
 
-verifyInput()
 clear()
 
 

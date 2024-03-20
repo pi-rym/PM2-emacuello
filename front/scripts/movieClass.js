@@ -14,15 +14,5 @@ class Movies {
     
 }
 
-// const postMovies = (movie) => {
-//     const url = 'http://localhost:3000/movies';
-//     axios.post(url, movie)
-//     .then( response => {
-//         console.log('Datos enviados con exito!',response.data)
-//     })
-//     .catch(error => {
-//         console.error('Error al enviar los datos :(', error)
-//     })
-// }
 
 module.exports = {Movies};

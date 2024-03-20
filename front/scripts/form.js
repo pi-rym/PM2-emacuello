@@ -24,9 +24,9 @@ const verifyInput = () => {
         const fields = id;
         if (checkEmptyFields(fields)) {
             form.classList.add('was-validated');
-        
-        }
-    });
+            return;    
+        } return;
+    }); 
 };
 
 

@@ -3,8 +3,6 @@ const btnClear = document.getElementById("clear")
 const btnSubmit = document.getElementById("submit");
 const id = ["title", "director", "year", "duration", "rating", "genre", "poster"];
 
-
-
 const getInputValue = (id) => {
     return document.getElementById(id).value.trim();
 };
@@ -24,7 +22,7 @@ const verifyInput = () => {
         const fields = id;
         if (checkEmptyFields(fields)) {
             form.classList.add('was-validated');
-            return;    
+            return ;    
         } return;
     }); 
 };

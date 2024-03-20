@@ -4,22 +4,18 @@ const {verifyInput, clear} = require('./form.js')
 const btnSubmit = document.getElementById('submit')
 const {Movies} = require('./movieClass.js')
 
-
 const datos = async(url) => {
     try {
         const data = await axios(url);
         const cards = data.data;
         cards.forEach(crearCards); 
     } catch (error) {
-        alert('eror no se',error.message)
+        alert('eror al obtener los datos',error.message)
     }
 }
 datos('http://localhost:3000/movies');
 
 verifyInput()
-
-
-
 
 const handler = (title, director, year, duration, rate, genre, poster) => {
     if (director === '' || year === '' || duration=== '' || rate=== '' ||genre=== '' ||poster=== '' ||title=== '') {

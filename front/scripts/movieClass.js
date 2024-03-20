@@ -1,5 +1,3 @@
-// const axios = require('axios')
-// const btnSubmit = document.getElementById('submit')
 class Movies {
     constructor (title, director, year, duration, rate, genre, poster) {
     this._id= null,

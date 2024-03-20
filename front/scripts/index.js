@@ -32,13 +32,10 @@ btnSubmit.addEventListener('click', async (event) => {
     console.log(movie)
     if (movie) {
         try {
-            await postMovies(movie);
-            
+            await postMovies(movie);           
         } catch (error) {
             console.error('Error al enviar datos al servidor:', error);
-        }
-        
-        
+        }      
     }
 })
 
@@ -54,6 +51,7 @@ const postMovies = async (movie) => {
     const url = 'http://localhost:3000/movies';
     try {
         const response = await axios.post(url, movie);
+        console.log(response.data)
         console.log('Película agregada con éxito');
     } catch (error) {
         console.error('Error al enviar datos al servidor:', error);

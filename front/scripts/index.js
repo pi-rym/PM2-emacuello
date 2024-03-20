@@ -1,8 +1,8 @@
 const crearCards = require('./renderCards.js')
 const axios = require('axios')
-const {verifyInput, clear} = require('./form.js')
+const {clear} = require('./form.js')
 const btnSubmit = document.getElementById('submit')
-const {Movies} = require('./movieClass.js')
+const form = document.getElementById("form");
 
 const datos = async(url) => {
     try {
@@ -15,15 +15,23 @@ const datos = async(url) => {
 }
 datos('http://localhost:3000/movies');
 
-verifyInput()
 
 const handler = (title, director, year, duration, rate, genre, poster) => {
-    if (director === '' || year === '' || duration=== '' || rate=== '' ||genre=== '' ||poster=== '' ||title=== '') {
+    if (director === '' || year === '' || duration=== '' || rate === '' ||genre=== '' ||poster=== '' ||title=== '' || rate > 10 || year < 0 || year > 2050) {
+        form.classList.add('was-validated');
         return alert('comprobar todos los campos requeridos')
     } else {
-        return new Movies(title, director, year, duration, rate, genre, poster);       
-    }
-}
+        return      {
+            _id: null,
+            title: title,
+            director: director,
+            year: year,
+            duration: duration,
+            rate: rate,
+            genre: genre,
+            poster:poster,
+            }   
+}}
 
 async function postMovies (movie) {
     const url = 'http://localhost:3000/movies';
@@ -32,7 +40,7 @@ async function postMovies (movie) {
         console.log(response.data)
         console.log('Película agregada con éxito');
     } catch (error) {
-        console.error('Error al enviar datos al servidor:', error.message);
+        console.log('Error al enviar datos al servidor: 2', error);
     }
 }
 
@@ -52,7 +60,7 @@ btnSubmit.addEventListener('click', async (event) => {
         try {
             await postMovies(movie);           
         } catch (error) {
-            console.error('Error al enviar datos al servidor:', error);
+            console.log('Error al enviar datos al servidor: 1', error);
         }      
     }
 })

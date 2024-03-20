@@ -24,9 +24,9 @@ const postMovies = async (req, res) => {
     try {        
         const {_id, title, year, director,duration, genre, rate, poster} = req.body;
         const newMovies = await createMovie({_id, title, year, director, duration, genre, rate, poster});
-        res.status(201).json('La pelicula fue agregada con exito',newMovies);
+        res.status(201).json({message: "La pelicula fue agregada con exito"});
     } catch (error) {
-        res.status(400).json({error:error.message,type: "error del tipo 2"})
+        res.status(400).json({error:error.message,type: "error al agregar la pelicula"})
     }
 }
 

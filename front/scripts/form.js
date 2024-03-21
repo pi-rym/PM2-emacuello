@@ -13,15 +13,21 @@ const clear = () => {
 const showAlertGreen = () => {
     alertGreen.style.display = "block";
     setTimeout(function() {
-        alertGreen.style.display = 'none';
+        alertGreen.classList.add('againHidden');
     }, 6000)
+    setTimeout(function() {
+        alertRed.classList.remove('againHidden');
+    }, 500)
 }
 
 const showAlertRed = () => {
     alertRed.style.display = "block";
     setTimeout(function() {
-        alertRed.style.display = 'none';
+        alertRed.classList.add('againHidden');
     }, 6000)
+    setTimeout(function() {
+        alertRed.classList.remove('againHidden');
+    }, 500);
 }
 
 module.exports = {clear, showAlertGreen,showAlertRed};

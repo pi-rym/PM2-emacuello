@@ -16,7 +16,7 @@ const showAlertGreen = () => {
         alertGreen.classList.add('againHidden');
     }, 6000)
     setTimeout(function() {
-        alertRed.classList.remove('againHidden');
+        alertGreen.classList.remove('againHidden');
     }, 500)
 }
 
